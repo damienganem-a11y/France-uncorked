@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>France, Uncorked</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Pinyon+Script&family=Manrope:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: phone-first invitation. Champagne off-white ground, rising bubbles, each chapter washed in its own tint; hotels as swipeable cards, details in tabs. Single light theme by design. */
+:root{
+  --pearl:#FCFAF5;
+  --cream:#F6EFE1;
+  --gold:#B48A45;
+  --gold-deep:#8C6A2F;
+  --ink:#352E28;
+  --ink-soft:#786E63;
+  --line:#E9DFCB;
+  --white:#FFFFFF;
+  --tint:#F6EEDC;
+  --accent:#B48A45;
+  --deep:#8C6A2F;
+  --display:"Instrument Serif", "Didot", Georgia, serif;
+  --script:"Pinyon Script", "Snell Roundhand", cursive;
+  --body:"Manrope", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{background:var(--pearl);-webkit-text-size-adjust:100%}
+body{background:var(--pearl);color:var(--ink);font-family:var(--body);font-weight:400;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+.kicker{font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--accent)}
+.script{font-family:var(--script);font-weight:400}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(120% 70% at 85% 0%, #FFF6E2 0%, rgba(255,246,226,0) 60%),
+  radial-gradient(100% 60% at 0% 100%, #F2E4C7 0%, rgba(242,228,199,0) 65%),
+  var(--pearl)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .wrap{position:relative;padding-block:64px 52px;display:grid;gap:22px}
+.hero h1{font-size:clamp(68px,19vw,150px);line-height:.88;letter-spacing:-.02em}
+.hero h1 .en{font-family:var(--script);font-size:.5em;color:var(--gold);display:inline-block;margin:0 .08em 0 .02em;transform:translateY(-.08em)}
+.hero h1 i{font-style:italic}
+.hero .promise{font-family:var(--display);font-style:italic;font-size:clamp(24px,6vw,34px);line-height:1.2;max-width:22ch}
+.hero .lede{max-width:52ch;color:var(--ink-soft);font-size:16.5px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding-top:22px;border-top:1px solid var(--line)}
+.facts div{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);line-height:1.35}
+.facts b{display:block;font-family:var(--display);font-weight:400;font-size:40px;letter-spacing:0;color:var(--gold);line-height:1;margin-bottom:4px;text-transform:none}
+@media (max-width:420px){.facts{grid-template-columns:repeat(2,1fr);row-gap:18px}}
+
+/* NAV */
+nav.toc{position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;background:color-mix(in srgb, var(--pearl) 90%, transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:30;background:var(--pearl)}
+nav.toc .wrap{display:flex;gap:8px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+nav.toc .wrap::-webkit-scrollbar{display:none}
+nav.toc a{flex:0 0 auto;font-size:12px;font-weight:500;letter-spacing:.06em;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--white);color:var(--ink-soft);white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
+
+/* JOURNEY */
+.journey{padding-block:64px 36px}
+.journey .wrap{display:grid;gap:24px}
+.journey h2{font-size:clamp(36px,9vw,58px);line-height:1}
+.journey h2 em{color:var(--gold)}
+.lead{font-size:17px;line-height:1.65;max-width:56ch;color:var(--ink)}
+.stops{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stops a{display:grid;gap:2px;padding:20px 10px 16px;border-radius:999px 999px 20px 20px;text-align:center;transition:transform .25s}
+.stops a:hover{transform:translateY(-3px)}
+.stops .d{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.stops .r{font-family:var(--display);font-size:22px;line-height:1.1}
+.stops .w{font-family:var(--script);font-size:22px;line-height:1.2;color:var(--ink-soft)}
+.s1{background:#F6EDD9}.s2{background:#ECEFE1}.s3{background:#F7E5E3}.s4{background:#ECE7F4}
+@media (max-width:600px){.stops{grid-template-columns:repeat(2,1fr)}}
+
+/* CHAPTERS */
+.chapter{position:relative;padding-block:72px 64px;background:linear-gradient(180deg, var(--pearl) 0%, var(--tint) 14%, var(--tint) 86%, var(--pearl) 100%);scroll-margin-top:54px}
+.chapter > .wrap{display:grid;gap:30px}
+.c-champagne{--tint:#F7EEDB;--accent:#B08540;--deep:#86642B}
+.c-jura{--tint:#EEF0E3;--accent:#77874E;--deep:#566238}
+.c-rhone{--tint:#F8E7E5;--accent:#A44E5D;--deep:#7E3442}
+.c-provence{--tint:#EEE9F6;--accent:#7563A6;--deep:#544480}
+.opener{display:grid;gap:10px}
+.opener .num{font-family:var(--script);font-size:30px;line-height:1;color:var(--accent)}
+.opener h2{font-size:clamp(60px,16vw,112px);line-height:.9;letter-spacing:-.02em}
+.opener .tag{font-family:var(--display);font-style:italic;font-size:clamp(21px,5vw,27px);line-height:1.25;color:var(--ink-soft);max-width:28ch}
+.notes{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.notes .chip{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:6px 7px 6px 13px;border-radius:999px;border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);background:color-mix(in srgb, var(--white) 75%, transparent);color:var(--deep);transition:background .2s,transform .15s,box-shadow .2s}
+.notes .chip:hover{background:var(--white);box-shadow:0 6px 16px -10px color-mix(in srgb, var(--deep) 80%, transparent)}
+.notes .chip:active{transform:scale(.96)}
+.chip .i{width:18px;height:18px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--white);font-family:var(--display);font-style:italic;font-size:13px;letter-spacing:0;text-transform:none;line-height:1}
+.hint{font-family:var(--script);font-size:21px;color:var(--ink-soft);line-height:1;margin-top:2px}
+
+/* info sheet */
+.sheet-bg{position:fixed;inset:0;z-index:50;background:rgba(53,46,40,.32);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;transition:opacity .3s}
+.sheet-bg.open{opacity:1}
+.sheet{position:fixed;z-index:51;left:0;right:0;bottom:0;max-height:82vh;overflow-y:auto;background:var(--pearl);border-radius:28px 28px 0 0;padding:14px max(24px, env(safe-area-inset-right, 0px)) calc(30px + env(safe-area-inset-bottom, 0px)) max(24px, env(safe-area-inset-left, 0px));transform:translateY(105%);transition:transform .38s cubic-bezier(.2,.8,.2,1);box-shadow:0 -20px 50px -20px rgba(53,46,40,.35)}
+.sheet.open{transform:translateY(0)}
+.sheet .grab{width:42px;height:4px;border-radius:999px;background:var(--line);margin:0 auto 18px}
+.sheet .in{max-width:560px;margin:0 auto;display:grid;gap:12px;position:relative}
+.sheet .bub{position:absolute;right:0;top:-4px;width:70px;height:70px;border-radius:50%;border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);pointer-events:none}
+.sheet .bub::after{content:"";position:absolute;width:20px;height:20px;border-radius:50%;border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);left:-18px;bottom:-6px}
+.sheet .kicker{color:var(--accent)}
+.sheet h3{font-size:44px;line-height:1;padding-right:70px}
+.sheet .sub{font-family:var(--display);font-style:italic;font-size:21px;line-height:1.3;color:var(--deep)}
+.sheet p.txt{font-size:15.5px;line-height:1.7}
+.sheet .fact{display:flex;gap:12px;align-items:baseline;padding:14px 16px;border-radius:18px;background:var(--tint)}
+.sheet .fact .script{font-size:24px;color:var(--accent);flex:0 0 auto;line-height:1}
+.sheet .fact p{font-size:14.5px;line-height:1.55}
+.sheet .x{justify-self:center;margin-top:6px;padding:12px 28px;border-radius:999px;background:var(--ink);color:var(--pearl);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+@media (min-width:720px){
+  .sheet{left:50%;right:auto;bottom:auto;top:50%;width:min(600px,92vw);border-radius:28px;padding:30px 34px 30px;transform:translate(-50%,-46%);opacity:0;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .3s;pointer-events:none}
+  .sheet.open{transform:translate(-50%,-50%);opacity:1;pointer-events:auto}
+  .sheet .grab{display:none}
+}
+.story{font-size:17px;line-height:1.7;max-width:56ch}
+.story::first-letter{font-family:var(--display);font-size:3.6em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--accent)}
+
+/* days */
+.days{display:grid;gap:14px}
+.day{background:var(--white);border-radius:24px;padding:24px 22px 22px;display:grid;gap:8px;box-shadow:0 20px 40px -32px color-mix(in srgb, var(--deep) 70%, transparent)}
+.day .top{display:flex;align-items:baseline;gap:12px}
+.day .n{font-family:var(--display);font-style:italic;font-size:46px;line-height:.9;color:var(--accent)}
+.day .lbl{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.day h3{font-size:27px;line-height:1.12}
+.day p{font-size:15.5px;line-height:1.65}
+.day .tonight{margin-top:4px;padding-top:12px;border-top:1px dashed var(--line);display:flex;gap:10px;align-items:baseline}
+.day .tonight .script{font-size:24px;color:var(--accent);flex:0 0 auto;line-height:1}
+
+/* HOTEL CAROUSEL */
+.stay{display:grid;gap:14px}
+.stay-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.stay-head h3{font-size:26px;line-height:1.1}
+.ctrl{display:flex;align-items:center;gap:6px;flex:0 0 auto}
+.ctrl button{width:42px;height:42px;border-radius:50%;border:1px solid color-mix(in srgb, var(--accent) 45%, transparent);background:var(--white);display:grid;place-items:center;transition:background .2s,opacity .2s,transform .15s}
+.ctrl button:hover{background:var(--tint)}
+.ctrl button:active{transform:scale(.94)}
+.ctrl button[disabled]{opacity:.35;cursor:default}
+.ctrl svg{width:16px;height:16px;stroke:var(--deep);fill:none;stroke-width:1.6}
+.ctrl .count{font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--ink-soft);min-width:38px;text-align:center;font-variant-numeric:tabular-nums}
+.track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;margin-inline:-20px;padding-inline:20px;scroll-padding-inline:20px;padding-bottom:6px}
+.track::-webkit-scrollbar{display:none}
+.hcard{flex:0 0 calc(100% - 34px);max-width:600px;scroll-snap-align:start;background:var(--white);border-radius:28px;overflow:hidden;display:grid;box-shadow:0 24px 46px -34px color-mix(in srgb, var(--deep) 80%, transparent)}
+.hcard .vis{position:relative;min-height:170px;padding:22px;display:grid;align-content:space-between;gap:20px;overflow:hidden;background:
+  radial-gradient(130% 120% at 100% 0%, color-mix(in srgb, var(--accent) 22%, var(--white)) 0%, var(--tint) 55%, color-mix(in srgb, var(--tint) 70%, var(--white)) 100%)}
+.hcard .vis::before,.hcard .vis::after{content:"";position:absolute;border-radius:50%;border:1px solid color-mix(in srgb, var(--accent) 40%, transparent)}
+.hcard .vis::before{width:150px;height:150px;right:-40px;top:-50px}
+.hcard .vis::after{width:46px;height:46px;right:88px;top:70px;background:color-mix(in srgb, var(--white) 50%, transparent)}
+.hcard .badge{justify-self:start;font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:var(--white);color:var(--deep);position:relative;z-index:1}
+.hcard .badge.pick{background:var(--deep);color:var(--white)}
+.hcard .vis h4{font-size:clamp(30px,8vw,40px);line-height:1;position:relative;z-index:1;max-width:14ch}
+.hcard .body{padding:20px 22px 22px;display:grid;gap:10px;align-content:start}
+.hcard .where{font-family:var(--display);font-style:italic;font-size:19px;line-height:1.25;color:var(--deep)}
+.hcard p{font-size:15px;line-height:1.6}
+.hcard .go{justify-self:start;margin-top:4px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--deep);border-bottom:1px solid currentColor;padding-bottom:2px}
+.dots{display:flex;justify-content:center;gap:8px}
+.dots button{width:7px;height:7px;border-radius:999px;background:color-mix(in srgb, var(--accent) 30%, transparent);padding:0;transition:width .25s,background .25s}
+.dots button.on{width:22px;background:var(--accent)}
+
+/* TABS */
+.tabs{display:grid;gap:16px}
+.tablist{display:flex;gap:6px;padding:5px;border-radius:999px;background:color-mix(in srgb, var(--white) 70%, transparent);border:1px solid color-mix(in srgb, var(--accent) 22%, transparent);overflow-x:auto;scrollbar-width:none}
+.tablist::-webkit-scrollbar{display:none}
+.tablist button{flex:1 0 auto;padding:10px 14px;border-radius:999px;font-size:13px;font-weight:500;color:var(--ink-soft);white-space:nowrap;transition:background .2s,color .2s}
+.tablist button[aria-selected="true"]{background:var(--deep);color:var(--white)}
+.panel ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.panel li a{display:grid;grid-template-columns:1fr auto;gap:2px 14px;align-items:center;background:var(--white);border-radius:18px;padding:16px 18px;transition:transform .2s}
+.panel li a:active{transform:scale(.99)}
+.panel .tg{grid-column:1;font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.panel .nm{grid-column:1;font-family:var(--display);font-size:22px;line-height:1.15}
+.panel .ds{grid-column:1;font-size:14px;color:var(--ink-soft);line-height:1.5}
+.panel .arr{grid-column:2;grid-row:1 / span 3;width:34px;height:34px;border-radius:50%;background:var(--tint);display:grid;place-items:center}
+.panel .arr svg{width:14px;height:14px;stroke:var(--deep);fill:none;stroke-width:1.6}
+
+/* divider */
+.fizz{display:flex;justify-content:center;gap:9px;align-items:flex-end;padding-block:6px}
+.fizz i{display:block;border-radius:50%;border:1px solid var(--accent);opacity:.55}
+
+/* WHY */
+.why{padding-block:76px 56px;background:linear-gradient(180deg, var(--pearl), #F7EEDB 40%, var(--pearl))}
+.why .wrap{display:grid;gap:30px}
+.why h2{font-size:clamp(38px,9.5vw,62px);line-height:1}
+.why h2 em{color:var(--gold)}
+.perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.perk{background:var(--white);border-radius:24px;padding:22px;display:grid;gap:8px;align-content:start}
+.perk .o{width:36px;height:36px;border-radius:50%;border:1px solid var(--gold);position:relative;margin-bottom:6px}
+.perk .o::after{content:"";position:absolute;width:10px;height:10px;border-radius:50%;border:1px solid var(--gold);right:-9px;top:-7px}
+.perk h3{font-size:25px;line-height:1.1}
+.perk p{font-size:15px;color:var(--ink-soft)}
+
+.closing{padding-block:36px 120px;text-align:center;scroll-margin-top:54px}
+.closing .wrap{display:grid;gap:14px;justify-items:center}
+.closing h2{font-size:clamp(44px,12vw,84px);line-height:.95;font-style:italic}
+.closing p{max-width:40ch;color:var(--ink-soft)}
+.closing .sig{font-family:var(--script);font-size:44px;line-height:1;color:var(--gold-deep);margin-top:10px}
+
+/* floating CTA, phone */
+.cta{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom, 0px));z-index:25;display:flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;background:var(--ink);color:var(--pearl);font-size:13px;font-weight:600;letter-spacing:.08em;box-shadow:0 14px 30px -12px rgba(53,46,40,.55);transition:opacity .3s,transform .3s;white-space:nowrap}
+.cta .b{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:8px -6px 0 -2px var(--gold)}
+.cta.hide{opacity:0;pointer-events:none;transform:translate(-50%,20px)}
+
+@media (min-width:720px){
+  body{font-size:17px}
+  .hcard{flex-basis:calc(100% - 120px)}
+  .day{padding:30px 30px 26px}
+  .story{font-size:18.5px}
+}
+@media (prefers-reduced-motion:reduce){.track{scroll-behavior:auto}*{transition:none!important}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head><body>
+
+<header class="hero">
+  <canvas id="fizzc" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="kicker">A private journey through French wine country</div>
+    <h1>France,<br><i>Uncorked</i></h1>
+    <p class="promise">From the first glass of champagne to the last sunset over Châteauneuf-du-Pape.</p>
+    <p class="lede">Ten days of spring in France, made for the two of you, or a few close friends if you want to share it. Grower champagne in chalk cellars, vin jaune in a hidden corner of the Jura, Syrah on the terraces of the Rhône, and long lunches under the Provence sun. The best tables in France, cellar doors that usually stay closed, and nothing for you to worry about.</p>
+    <div class="facts">
+      <div><b>10</b>days in spring</div>
+      <div><b>4</b>wine regions</div>
+      <div><b>3</b>starred feasts</div>
+      <div><b>1</b>small, private group</div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Chapters">
+  <div class="wrap">
+    <a href="#journey">The journey</a>
+    <a href="#champagne">Champagne</a>
+    <a href="#jura">Jura</a>
+    <a href="#rhone">Lyon &amp; Rhône</a>
+    <a href="#provence">Provence</a>
+    <a href="#why">Why with me</a>
+  </div>
+</nav>
+
+<main>
+
+<section class="journey" id="journey">
+  <div class="wrap">
+    <div class="kicker">The journey</div>
+    <h2>Land in Paris, and by lunch your glass is <em>already sparkling.</em></h2>
+    <p class="lead">We skip the city and go straight to the vineyards. From there, France unfolds south one region at a time: the bubbles of Champagne, the wild green hills of the Jura, the food capital of Lyon and its legendary Rhône wines, and finally the light and the stones of Provence.</p>
+    <ol class="stops">
+      <li><a class="s1" href="#champagne"><span class="d">Days 1 to 3</span><span class="r">Champagne</span><span class="w">the bubbles</span></a></li>
+      <li><a class="s2" href="#jura"><span class="d">Days 3 to 5</span><span class="r">Jura</span><span class="w">the secret</span></a></li>
+      <li><a class="s3" href="#rhone"><span class="d">Days 5 to 8</span><span class="r">Lyon &amp; Rhône</span><span class="w">the feast</span></a></li>
+      <li><a class="s4" href="#provence"><span class="d">Days 8 to 10</span><span class="r">Provence</span><span class="w">the galets</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- CHAMPAGNE -->
+<section class="chapter c-champagne" id="champagne">
+  <div class="wrap">
+    <div class="opener">
+      <div class="num">Chapter one</div>
+      <h2>Champagne</h2>
+      <p class="tag">Chalk cellars, Grand Cru villages and a first night among the vines.</p>
+      <div class="notes"><button class="chip" data-info="chardonnay">Chardonnay<span class="i">i</span></button><button class="chip" data-info="pinot">Pinot Noir<span class="i">i</span></button><button class="chip" data-info="meunier">Meunier<span class="i">i</span></button><button class="chip" data-info="chalk">Chalk<span class="i">i</span></button></div>
+      <p class="hint">Tap a word to discover its story</p>
+    </div>
+
+    <p class="story">This is where the bubbles begin. We go beyond the famous labels to the families who grow their own grapes, some of the most exciting winemakers in France, and two nights in two very special houses. The first in the Selosse family home, among the vines of the Côte des Blancs. The second in Reims, at the three-star house that opens the doors of Krug.</p>
+
+    <div class="days">
+      <article class="day">
+        <div class="top"><span class="n">01</span><span class="lbl">Arrival</span></div>
+        <h3>Straight into the vines</h3>
+        <p>Your driver waits at Charles de Gaulle, and less than two hours later you're in Avize, at Les Avisés, the house of cult winemaker Anselme Selosse. Time to rest, a slow walk through the Grand Cru vines, and a first tasting with a grower in the village.</p>
+        <div class="tonight"><span class="script">Tonight</span><p>Dinner at the long table of Les Avisés, with Selosse champagnes poured as they are meant to be.</p></div>
+      </article>
+      <article class="day">
+        <div class="top"><span class="n">02</span><span class="lbl">Bubbles</span></div>
+        <h3>Grand Cru villages, Krug and three stars</h3>
+        <p>A morning with the growers of Cramant and Le Mesnil, then on to Reims. In the afternoon, Krug opens its doors for a private visit, the most exclusive house in Champagne, followed by the cathedral where the kings of France were crowned.</p>
+        <div class="tonight"><span class="script">Tonight</span><p>L'Assiette Champenoise, Arnaud Lallement's three Michelin stars.</p></div>
+      </article>
+    </div>
+
+    <div class="stay" data-carousel>
+      <div class="stay-head">
+        <h3>Where you'll stay</h3>
+        <div class="ctrl"><button class="prev" aria-label="Previous hotel"><svg viewBox="0 0 16 16"><path d="M10 3 5 8l5 5"/></svg></button><span class="count">1 / 3</span><button class="next" aria-label="Next hotel"><svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5"/></svg></button></div>
+      </div>
+      <div class="track">
+        <article class="hcard">
+          <div class="vis"><span class="badge pick">Night one</span><h4>Les Avisés</h4></div>
+          <div class="body">
+            <span class="where">Avize, in the Côte des Blancs</span>
+            <p>Ten rooms in the Selosse family home, next to the winery. The domaine is closed to visitors, so this is the way in: a single menu at the long table, the full range of Selosse champagnes, and, on some evenings, an aperitif hosted by the domaine for hotel guests.</p>
+            <a class="go" href="https://www.selosse-lesavises.com" target="_blank" rel="noopener">Discover the house</a>
+          </div>
+        </article>
+        <article class="hcard">
+          <div class="vis"><span class="badge pick">Night two</span><h4>L'Assiette Champenoise</h4></div>
+          <div class="body">
+            <span class="where">Reims, three Michelin stars, Relais &amp; Châteaux</span>
+            <p>Arnaud Lallement's family house, with a privileged relationship with Krug. Stay here and the private Krug visit comes with it, followed by a dinner paired with Krug Grande Cuvée, Vintage and Rosé. Then just walk upstairs to your suite.</p>
+            <a class="go" href="https://www.assiettechampenoise.com/en/experience/private-champagne-krug-2/" target="_blank" rel="noopener">Discover the Krug experience</a>
+          </div>
+        </article>
+        <article class="hcard">
+          <div class="vis"><span class="badge">Or, for vineyard views</span><h4>Royal Champagne</h4></div>
+          <div class="body">
+            <span class="where">Champillon, above the vines of Épernay</span>
+            <p>Every room opens onto the vineyards, with a huge spa, indoor and outdoor pools and a Michelin-starred restaurant. Recently awarded the Palace distinction.</p>
+            <a class="go" href="https://www.royalchampagne.com" target="_blank" rel="noopener">Discover the hotel</a>
+          </div>
+        </article>
+      </div>
+      <div class="dots"></div>
+    </div>
+
+    <div class="tabs" data-tabs>
+      <div class="tablist" role="tablist"><button role="tab" aria-selected="true">At the table</button><button role="tab" aria-selected="false">In the cellars</button><button role="tab" aria-selected="false">Beyond the glass</button></div>
+      <div class="panel" role="tabpanel"><ul>
+        <li><a href="https://www.assiettechampenoise.com" target="_blank" rel="noopener"><span class="tg">Three stars</span><span class="nm">L'Assiette Champenoise</span><span class="ds">The signature blue lobster, paired with Krug.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.selosse-lesavises.com" target="_blank" rel="noopener"><span class="tg">Night one</span><span class="nm">Les Avisés</span><span class="ds">One menu, one long table, Selosse all evening.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Arbane+restaurant+Reims" target="_blank" rel="noopener"><span class="tg">Two stars</span><span class="nm">Arbane</span><span class="ds">The rising star of Reims.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+      </ul></div>
+      <div class="panel" role="tabpanel" hidden><ul>
+        <li><a href="https://www.krug.com" target="_blank" rel="noopener"><span class="tg">Reims</span><span class="nm">Krug</span><span class="ds">A private visit to the most mythical house of all, arranged through L'Assiette Champenoise.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.larmandier.fr" target="_blank" rel="noopener"><span class="tg">Vertus</span><span class="nm">Larmandier-Bernier</span><span class="ds">Biodynamic, pure, chalky Blanc de Blancs.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Champagne+Agrapart+Avize" target="_blank" rel="noopener"><span class="tg">Avize</span><span class="nm">Agrapart</span><span class="ds">A grower loved by sommeliers worldwide.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Champagne+Bereche+Ludes" target="_blank" rel="noopener"><span class="tg">Ludes</span><span class="nm">Bérêche et Fils</span><span class="ds">Minimal intervention, maximum emotion.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+      </ul></div>
+      <div class="panel" role="tabpanel" hidden><ul>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Cath%C3%A9drale+Notre-Dame+de+Reims" target="_blank" rel="noopener"><span class="tg">UNESCO</span><span class="nm">Reims Cathedral</span><span class="ds">A Gothic wonder with Chagall windows.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Abbaye+Saint-Pierre+Hautvillers" target="_blank" rel="noopener"><span class="tg">Village</span><span class="nm">Hautvillers</span><span class="ds">The abbey of Dom Pérignon.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Avenue+de+Champagne+%C3%89pernay" target="_blank" rel="noopener"><span class="tg">Épernay</span><span class="nm">Avenue de Champagne</span><span class="ds">Grand mansions with miles of cellars below.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<div class="fizz" aria-hidden="true" style="--accent:#B08540"><i style="width:6px;height:6px"></i><i style="width:10px;height:10px"></i><i style="width:4px;height:4px"></i><i style="width:14px;height:14px"></i><i style="width:7px;height:7px"></i></div>
+
+<!-- JURA -->
+<section class="chapter c-jura" id="jura">
+  <div class="wrap">
+    <div class="opener">
+      <div class="num">Chapter two</div>
+      <h2>Jura</h2>
+      <p class="tag">France's best-kept wine secret, and the heart of natural wine.</p>
+      <div class="notes"><button class="chip" data-info="savagnin">Savagnin<span class="i">i</span></button><button class="chip" data-info="poulsard">Poulsard<span class="i">i</span></button><button class="chip" data-info="trousseau">Trousseau<span class="i">i</span></button><button class="chip" data-info="vinjaune">Vin jaune<span class="i">i</span></button></div>
+    </div>
+
+    <p class="story">Green hills, forests, cliff-top villages, and winemakers who still do everything by hand. This is where vin jaune ages for six years under a veil of yeast, where comté sleeps in mountain forts, and where many of the natural wines you love in Napa were born. We stay in an 18th-century château by the river and let the region surprise you.</p>
+
+    <div class="days">
+      <article class="day">
+        <div class="top"><span class="n">03</span><span class="lbl">Road south</span></div>
+        <h3>Through Burgundy, into the hills</h3>
+        <p>A last champagne in the morning, then a beautiful drive south with a long lunch in Chablis (or Beaune, if Burgundy calls you). By late afternoon, the château gates open.</p>
+        <div class="tonight"><span class="script">Tonight</span><p>Dinner at the château, first sips of Savagnin.</p></div>
+      </article>
+      <article class="day">
+        <div class="top"><span class="n">04</span><span class="lbl">Vin jaune</span></div>
+        <h3>Arbois, Pupillin and Château-Chalon</h3>
+        <p>Natural winemakers in Arbois and the tiny village of Pupillin, with a stop at Louis Pasteur's family home. After lunch, the cliff-top village of Château-Chalon and its legendary vin jaune, then Fort Saint-Antoine, where 100,000 wheels of comté age inside a mountain fort.</p>
+        <div class="tonight"><span class="script">Tonight</span><p>A candlelit dinner back at the château.</p></div>
+      </article>
+    </div>
+
+    <div class="stay" data-carousel>
+      <div class="stay-head">
+        <h3>Where you'll stay</h3>
+        <div class="ctrl"><button class="prev" aria-label="Previous hotel"><svg viewBox="0 0 16 16"><path d="M10 3 5 8l5 5"/></svg></button><span class="count">1 / 3</span><button class="next" aria-label="Next hotel"><svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5"/></svg></button></div>
+      </div>
+      <div class="track">
+        <article class="hcard">
+          <div class="vis"><span class="badge pick">Our choice</span><h4>Château de Germigney</h4></div>
+          <div class="body">
+            <span class="where">A river valley minutes from Arbois</span>
+            <p>A Relais &amp; Châteaux hunting lodge in a private park, with a Caudalie vinotherapy spa (wine-based treatments, of course), a natural swimming pond and a gastronomic restaurant cooking almost only local produce.</p>
+            <a class="go" href="https://www.chateaudegermigney.com" target="_blank" rel="noopener">Discover the hotel</a>
+          </div>
+        </article>
+        <article class="hcard">
+          <div class="vis"><span class="badge">All to yourselves</span><h4>Le Clos Alice</h4></div>
+          <div class="body">
+            <span class="where">Arbois, by the river</span>
+            <p>Five suites with spa and pool, small enough to take the whole house.</p>
+            <a class="go" href="https://www.jura-tourism.com/hotel/le-clos-alice/" target="_blank" rel="noopener">Discover the hotel</a>
+          </div>
+        </article>
+        <article class="hcard">
+          <div class="vis"><span class="badge">With a story</span><h4>La Closerie des Capucines</h4></div>
+          <div class="body">
+            <span class="where">Arbois, in the old town</span>
+            <p>A charming guest house owned by the American wine importer Neal Rosenthal.</p>
+            <a class="go" href="https://www.decanter.com/wine-travel/a-perfect-weekend-in-the-jura-481519/" target="_blank" rel="noopener">Discover the house</a>
+          </div>
+        </article>
+      </div>
+      <div class="dots"></div>
+    </div>
+
+    <div class="tabs" data-tabs>
+      <div class="tablist" role="tablist"><button role="tab" aria-selected="true">At the table</button><button role="tab" aria-selected="false">In the cellars</button><button role="tab" aria-selected="false">Beyond the glass</button></div>
+      <div class="panel" role="tabpanel"><ul>
+        <li><a href="https://www.chateaudegermigney.com" target="_blank" rel="noopener"><span class="tg">Gastronomic</span><span class="nm">La Table du Château</span><span class="ds">Seasonal Jura cooking at Germigney.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Le+Bistronome+Arbois" target="_blank" rel="noopener"><span class="tg">Arbois</span><span class="nm">Le Bistronome</span><span class="ds">The locals' favourite in town.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=restaurant+Chablis" target="_blank" rel="noopener"><span class="tg">Day three</span><span class="nm">Lunch in Chablis</span><span class="ds">Oysters and Premier Cru Chablis, the perfect pairing.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+      </ul></div>
+      <div class="panel" role="tabpanel" hidden><ul>
+        <li><a href="https://www.stephane-tissot.com" target="_blank" rel="noopener"><span class="tg">Montigny</span><span class="nm">Bénédicte &amp; Stéphane Tissot</span><span class="ds">Biodynamic, from crémant to vin jaune.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Domaine+de+la+Tournelle+Arbois" target="_blank" rel="noopener"><span class="tg">Arbois</span><span class="nm">Domaine de la Tournelle</span><span class="ds">Natural wines, warm welcome.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Domaine+Jean+Macle+Ch%C3%A2teau-Chalon" target="_blank" rel="noopener"><span class="tg">Château-Chalon</span><span class="nm">Jean Macle</span><span class="ds">The reference for vin jaune.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Domaine+Labet+Rotalier" target="_blank" rel="noopener"><span class="tg">Rotalier</span><span class="nm">Domaine Labet</span><span class="ds">Stunning terroir Chardonnay.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+      </ul></div>
+      <div class="panel" role="tabpanel" hidden><ul>
+        <li><a href="https://www.salineroyale.com" target="_blank" rel="noopener"><span class="tg">UNESCO</span><span class="nm">Saline Royale</span><span class="ds">A royal saltworks designed as an ideal city.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Fort+Saint-Antoine+comt%C3%A9" target="_blank" rel="noopener"><span class="tg">Comté</span><span class="nm">Fort Saint-Antoine</span><span class="ds">Tasting comté of every age, deep in a fort.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Baume-les-Messieurs" target="_blank" rel="noopener"><span class="tg">Village</span><span class="nm">Baume-les-Messieurs</span><span class="ds">An abbey in a dramatic limestone valley.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<div class="fizz" aria-hidden="true" style="--accent:#77874E"><i style="width:5px;height:5px"></i><i style="width:12px;height:12px"></i><i style="width:7px;height:7px"></i><i style="width:4px;height:4px"></i><i style="width:9px;height:9px"></i></div>
+
+<!-- RHONE -->
+<section class="chapter c-rhone" id="rhone">
+  <div class="wrap">
+    <div class="opener">
+      <div class="num">Chapter three</div>
+      <h2>Lyon &amp; the&nbsp;Rhône</h2>
+      <p class="tag">Steep Syrah terraces, Beaujolais rebels and the food capital of France.</p>
+      <div class="notes"><button class="chip" data-info="syrah">Syrah<span class="i">i</span></button><button class="chip" data-info="viognier">Viognier<span class="i">i</span></button><button class="chip" data-info="gamay">Gamay<span class="i">i</span></button><button class="chip" data-info="granite">Granite<span class="i">i</span></button></div>
+    </div>
+
+    <p class="story">Lyon is where French gastronomy was born, and for three nights it's home. To the south, the dramatic slopes of Côte-Rôtie and Hermitage and lunch at Maison Pic. To the north, the Beaujolais villages where the natural wine movement started, and dinner at the legendary Paul Bocuse. In between, markets, Roman ruins and the best bistros in the world.</p>
+
+    <div class="days">
+      <article class="day">
+        <div class="top"><span class="n">05</span><span class="lbl">Lyon</span></div>
+        <h3>Hello, Lyon</h3>
+        <p>A last Jura tasting on the way, then Lyon. We get lost in the hidden passageways of the old town and climb to Fourvière for the view over a sea of red roofs.</p>
+        <div class="tonight"><span class="script">Tonight</span><p>A real Lyon bouchon, red-checked tablecloths and all.</p></div>
+      </article>
+      <article class="day">
+        <div class="top"><span class="n">06</span><span class="lbl">Syrah</span></div>
+        <h3>The Northern Rhône and Maison Pic</h3>
+        <p>A Roman temple in Vienne, then the vertiginous terraces of Côte-Rôtie and the perfumed Viognier of Condrieu. Lunch at Maison Pic, three stars, by Anne-Sophie Pic. In the afternoon, the hill of Hermitage and a sweet stop at the Valrhona chocolate house.</p>
+        <div class="tonight"><span class="script">Tonight</span><p>Free to wander, or a glass by the river.</p></div>
+      </article>
+      <article class="day">
+        <div class="top"><span class="n">07</span><span class="lbl">Gamay</span></div>
+        <h3>Beaujolais and Bocuse</h3>
+        <p>The natural wine pioneers of Morgon and Fleurie, a village lunch, then a drive through the golden-stone villages of the Pierres Dorées.</p>
+        <div class="tonight"><span class="script">Tonight</span><p>Restaurant Paul Bocuse, the most famous restaurant in France.</p></div>
+      </article>
+    </div>
+
+    <div class="stay" data-carousel>
+      <div class="stay-head">
+        <h3>Where you'll stay</h3>
+        <div class="ctrl"><button class="prev" aria-label="Previous hotel"><svg viewBox="0 0 16 16"><path d="M10 3 5 8l5 5"/></svg></button><span class="count">1 / 3</span><button class="next" aria-label="Next hotel"><svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5"/></svg></button></div>
+      </div>
+      <div class="track">
+        <article class="hcard">
+          <div class="vis"><span class="badge pick">Our choice</span><h4>InterContinental Hôtel-Dieu</h4></div>
+          <div class="body">
+            <span class="where">On the banks of the Rhône, in the heart of Lyon</span>
+            <p>A UNESCO-listed 18th-century landmark reborn as Lyon's grandest hotel, with cocktails under its famous dome and the whole city at your doorstep.</p>
+            <a class="go" href="https://www.google.com/maps/search/?api=1&query=InterContinental+Lyon+Hotel+Dieu" target="_blank" rel="noopener">Discover the hotel</a>
+          </div>
+        </article>
+        <article class="hcard">
+          <div class="vis"><span class="badge">Renaissance romance</span><h4>Cour des Loges</h4></div>
+          <div class="body">
+            <span class="where">Vieux Lyon</span>
+            <p>Four Renaissance houses around a glass-roofed courtyard in the old town, with a Michelin-starred restaurant.</p>
+            <a class="go" href="https://www.courdesloges.com" target="_blank" rel="noopener">Discover the hotel</a>
+          </div>
+        </article>
+        <article class="hcard">
+          <div class="vis"><span class="badge">With the view</span><h4>Villa Florentine</h4></div>
+          <div class="body">
+            <span class="where">Fourvière hill</span>
+            <p>A former convent on the hill with the most beautiful panorama over Lyon.</p>
+            <a class="go" href="https://www.villaflorentine.com" target="_blank" rel="noopener">Discover the hotel</a>
+          </div>
+        </article>
+      </div>
+      <div class="dots"></div>
+    </div>
+
+    <div class="tabs" data-tabs>
+      <div class="tablist" role="tablist"><button role="tab" aria-selected="true">At the table</button><button role="tab" aria-selected="false">In the cellars</button><button role="tab" aria-selected="false">Beyond the glass</button></div>
+      <div class="panel" role="tabpanel"><ul>
+        <li><a href="https://www.anne-sophie-pic.com" target="_blank" rel="noopener"><span class="tg">Three stars</span><span class="nm">Maison Pic</span><span class="ds">The world's most decorated female chef.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.bocuse.fr" target="_blank" rel="noopener"><span class="tg">Two stars</span><span class="nm">Paul Bocuse</span><span class="ds">The temple of French cuisine.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Le+Neuvi%C3%A8me+Art+Lyon" target="_blank" rel="noopener"><span class="tg">Two stars</span><span class="nm">Le Neuvième Art</span><span class="ds">Modern, precise, quietly brilliant.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.lamerebrazier.fr" target="_blank" rel="noopener"><span class="tg">Legend</span><span class="nm">La Mère Brazier</span><span class="ds">A Lyon institution since the 1920s.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+      </ul></div>
+      <div class="panel" role="tabpanel" hidden><ul>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Domaine+Jamet+Ampuis" target="_blank" rel="noopener"><span class="tg">Côte-Rôtie</span><span class="nm">Domaine Jamet</span><span class="ds">Syrah from the steepest slopes.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Domaine+Georges+Vernay+Condrieu" target="_blank" rel="noopener"><span class="tg">Condrieu</span><span class="nm">Georges Vernay</span><span class="ds">The family that saved Viognier.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.chapoutier.com" target="_blank" rel="noopener"><span class="tg">Hermitage</span><span class="nm">M. Chapoutier</span><span class="ds">Biodynamic pioneer on the hill.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.marcel-lapierre.com" target="_blank" rel="noopener"><span class="tg">Morgon</span><span class="nm">Marcel Lapierre</span><span class="ds">The founding family of natural Beaujolais.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Jean+Foillard+Villi%C3%A9-Morgon" target="_blank" rel="noopener"><span class="tg">Morgon</span><span class="nm">Jean Foillard</span><span class="ds">Côte du Py, a cult bottle.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+      </ul></div>
+      <div class="panel" role="tabpanel" hidden><ul>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Basilique+Notre-Dame+de+Fourvi%C3%A8re" target="_blank" rel="noopener"><span class="tg">Lyon</span><span class="nm">Fourvière</span><span class="ds">Basilica, Roman theatres, the city at your feet.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Halles+de+Lyon+Paul+Bocuse" target="_blank" rel="noopener"><span class="tg">Market</span><span class="nm">Halles Paul Bocuse</span><span class="ds">Oysters and a glass of white at the counter.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.citeduchocolat.com" target="_blank" rel="noopener"><span class="tg">Tain</span><span class="nm">Cité du Chocolat Valrhona</span><span class="ds">Where the great pastry chefs get their chocolate.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Temple+d%27Auguste+et+de+Livie+Vienne" target="_blank" rel="noopener"><span class="tg">Vienne</span><span class="nm">Temple of Augustus</span><span class="ds">A Roman temple in the middle of the town square.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<div class="fizz" aria-hidden="true" style="--accent:#A44E5D"><i style="width:8px;height:8px"></i><i style="width:4px;height:4px"></i><i style="width:13px;height:13px"></i><i style="width:6px;height:6px"></i><i style="width:10px;height:10px"></i></div>
+
+<!-- PROVENCE -->
+<section class="chapter c-provence" id="provence">
+  <div class="wrap">
+    <div class="opener">
+      <div class="num">Chapter four</div>
+      <h2>Provence</h2>
+      <p class="tag">Galets, Grenache, lavender skies and a village all of our own.</p>
+      <div class="notes"><button class="chip" data-info="grenache">Grenache<span class="i">i</span></button><button class="chip" data-info="mourvedre">Mourvèdre<span class="i">i</span></button><button class="chip" data-info="mistral">Mistral<span class="i">i</span></button><button class="chip" data-info="galets">Galets<span class="i">i</span></button></div>
+    </div>
+
+    <p class="story">An hour on the fast train and the light changes. We finish in a hilltop village facing Mont Ventoux, close to the vineyards of Châteauneuf-du-Pape, where the vines grow through big round stones that hold the sun's heat into the night. Long lunches, perched villages, and one last dinner under the stars.</p>
+
+    <div class="days">
+      <article class="day">
+        <div class="top"><span class="n">08</span><span class="lbl">South</span></div>
+        <h3>Into the sun</h3>
+        <p>First class on the TGV, and an hour later you step out in Provence. Lunch in Châteauneuf-du-Pape under the ruins of the Popes' summer castle, then a walk through vineyards covered in galets.</p>
+        <div class="tonight"><span class="script">Tonight</span><p>Dinner on the terrace, Mont Ventoux turning pink at sunset.</p></div>
+      </article>
+      <article class="day">
+        <div class="top"><span class="n">09</span><span class="lbl">Galets</span></div>
+        <h3>Gigondas, the Dentelles and the hill villages</h3>
+        <p>The jagged limestone Dentelles above Gigondas, a village lunch in Séguret, then your choice: the stone village of Gordes and the ochre cliffs of Roussillon, the Palais des Papes in Avignon, or one more natural winemaker.</p>
+        <div class="tonight"><span class="script">Tonight</span><p>Our farewell dinner, and a very special bottle.</p></div>
+      </article>
+      <article class="day">
+        <div class="top"><span class="n">10</span><span class="lbl">À bientôt</span></div>
+        <h3>A last coffee, then home</h3>
+        <p>A slow breakfast in the village, then we ride the direct train together to Charles de Gaulle. I walk you all the way to check-in and see your bags off, so the only thing left to do is board, with a suitcase full of bottles and stories.</p>
+      </article>
+    </div>
+
+    <div class="stay" data-carousel>
+      <div class="stay-head">
+        <h3>Where you'll stay</h3>
+        <div class="ctrl"><button class="prev" aria-label="Previous hotel"><svg viewBox="0 0 16 16"><path d="M10 3 5 8l5 5"/></svg></button><span class="count">1 / 2</span><button class="next" aria-label="Next hotel"><svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5"/></svg></button></div>
+      </div>
+      <div class="track">
+        <article class="hcard">
+          <div class="vis"><span class="badge pick">Our choice</span><h4>Crillon le Brave</h4></div>
+          <div class="body">
+            <span class="where">A hilltop village facing Mont Ventoux</span>
+            <p>Not a hotel in a village, but a village that became a hotel: twelve old stone houses, a spa in the former stables, two heated pools and terraces made for sunset. Freshly renovated and reopened in spring 2026.</p>
+            <a class="go" href="https://www.crillonlebrave.com" target="_blank" rel="noopener">Discover the hotel</a>
+          </div>
+        </article>
+        <article class="hcard">
+          <div class="vis"><span class="badge">In the city of the Popes</span><h4>La Mirande</h4></div>
+          <div class="body">
+            <span class="where">Avignon, at the foot of the Palais des Papes</span>
+            <p>An 18th-century mansion with a Michelin-starred restaurant, a secret garden and a chef's table in the old kitchen.</p>
+            <a class="go" href="https://www.la-mirande.fr" target="_blank" rel="noopener">Discover the hotel</a>
+          </div>
+        </article>
+      </div>
+      <div class="dots"></div>
+    </div>
+
+    <div class="tabs" data-tabs>
+      <div class="tablist" role="tablist"><button role="tab" aria-selected="true">At the table</button><button role="tab" aria-selected="false">In the cellars</button><button role="tab" aria-selected="false">Beyond the glass</button></div>
+      <div class="panel" role="tabpanel"><ul>
+        <li><a href="https://www.la-mirande.fr" target="_blank" rel="noopener"><span class="tg">One star</span><span class="nm">La Mirande</span><span class="ds">Gastronomy in a secret garden.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.crillonlebrave.com" target="_blank" rel="noopener"><span class="tg">The hotel</span><span class="nm">La Table du Ventoux</span><span class="ds">Provence on a plate, the mountain on the horizon.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=La+Mere+Germaine+Ch%C3%A2teauneuf-du-Pape" target="_blank" rel="noopener"><span class="tg">Châteauneuf</span><span class="nm">La Mère Germaine</span><span class="ds">Lunch with the vines all around.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+      </ul></div>
+      <div class="panel" role="tabpanel" hidden><ul>
+        <li><a href="https://www.beaucastel.com" target="_blank" rel="noopener"><span class="tg">Châteauneuf</span><span class="nm">Château de Beaucastel</span><span class="ds">All thirteen grapes, organic for generations.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Domaine+de+la+Vieille+Julienne" target="_blank" rel="noopener"><span class="tg">Châteauneuf</span><span class="nm">Vieille Julienne</span><span class="ds">Biodynamic old vines.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau+de+Saint+Cosme+Gigondas" target="_blank" rel="noopener"><span class="tg">Gigondas</span><span class="nm">Château de Saint Cosme</span><span class="ds">A family estate since 1490.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Domaine+Gramenon" target="_blank" rel="noopener"><span class="tg">Drôme</span><span class="nm">Domaine Gramenon</span><span class="ds">A natural wine pioneer of the south.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+      </ul></div>
+      <div class="panel" role="tabpanel" hidden><ul>
+        <li><a href="https://www.palais-des-papes.com" target="_blank" rel="noopener"><span class="tg">UNESCO</span><span class="nm">Palais des Papes</span><span class="ds">The largest Gothic palace in the world.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Gordes" target="_blank" rel="noopener"><span class="tg">Luberon</span><span class="nm">Gordes</span><span class="ds">A stone village perched on its cliff.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Roussillon+Vaucluse+sentier+des+ocres" target="_blank" rel="noopener"><span class="tg">Luberon</span><span class="nm">Roussillon</span><span class="ds">Red and orange ochre cliffs.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="kicker">Why travel with me</div>
+    <h2>Every door opened, <em>every detail handled.</em></h2>
+    <div class="perks">
+      <div class="perk"><span class="o"></span><h3>Small on purpose</h3><p>Made for the two of you, or a few close friends. Keeping it intimate is what opens the doors and protects the magic.</p></div>
+      <div class="perk"><span class="o"></span><h3>Cellars that stay closed</h3><p>Winemakers who don't take visitors, opened through friends and local experts in every region.</p></div>
+      <div class="perk"><span class="o"></span><h3>The best tables</h3><p>Three stars in Champagne and Valence, Bocuse in Lyon, and the bistros the locals keep for themselves.</p></div>
+      <div class="perk"><span class="o"></span><h3>One host, door to door</h3><p>I meet you when you land and I'm by your side until your bags are checked in for the flight home. The only thing you have to do is taste.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="closing" id="closing">
+  <div class="wrap">
+    <div class="fizz" aria-hidden="true" style="--accent:#B48A45"><i style="width:6px;height:6px"></i><i style="width:11px;height:11px"></i><i style="width:4px;height:4px"></i><i style="width:16px;height:16px"></i><i style="width:8px;height:8px"></i></div>
+    <h2>Shall we open the first bottle?</h2>
+    <p>Spring in France is short and the best cellars book early. Tell me your dates and who's coming, and I'll start opening doors.</p>
+    <span class="sig">Damien</span>
+  </div>
+</section>
+
+</main>
+
+<a class="cta" href="#closing"><span class="b"></span>Let's plan your spring</a>
+
+<div class="sheet-bg" hidden></div>
+<div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-title" hidden>
+  <div class="grab" aria-hidden="true"></div>
+  <div class="in">
+    <span class="bub" aria-hidden="true"></span>
+    <span class="kicker" id="sh-kind"></span>
+    <h3 id="sh-title"></h3>
+    <p class="sub" id="sh-sub"></p>
+    <p class="txt" id="sh-txt"></p>
+    <div class="fact"><span class="script">Did you know</span><p id="sh-fact"></p></div>
+    <button class="x" type="button">Back to the journey</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* hero bubbles */
+  var c=document.getElementById('fizzc');
+  if(c&&c.getContext){
+    var ctx=c.getContext('2d'),dpr=Math.min(window.devicePixelRatio||1,2),W=0,H=0,bs=[];
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function size(){var r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*dpr;c.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);}
+    function make(bottom){var r=Math.random();return{x:Math.random()*W,y:bottom?H+20:Math.random()*H,r:1.5+r*r*9,s:.25+Math.random()*.7,w:Math.random()*6.3,a:.25+Math.random()*.45};}
+    function init(){size();bs=[];var n=Math.round(Math.min(70,W/12));for(var i=0;i<n;i++)bs.push(make(false));}
+    function draw(){ctx.clearRect(0,0,W,H);for(var i=0;i<bs.length;i++){var b=bs[i];
+      ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,6.283);ctx.strokeStyle='rgba(180,138,69,'+b.a+')';ctx.lineWidth=1;ctx.stroke();
+      ctx.fillStyle='rgba(255,250,238,'+(b.a*.5)+')';ctx.fill();
+      ctx.beginPath();ctx.arc(b.x-b.r*.35,b.y-b.r*.35,Math.max(.6,b.r*.22),0,6.283);ctx.fillStyle='rgba(255,255,255,'+(b.a+.2)+')';ctx.fill();}}
+    function step(){for(var i=0;i<bs.length;i++){var b=bs[i];b.y-=b.s;b.w+=.02;b.x+=Math.sin(b.w)*.25;if(b.y<-20)bs[i]=make(true);}draw();requestAnimationFrame(step);}
+    init();draw();window.addEventListener('resize',function(){init();draw();});
+    if(!reduce)requestAnimationFrame(step);
+  }
+
+  /* hotel carousels */
+  document.querySelectorAll('[data-carousel]').forEach(function(root){
+    var track=root.querySelector('.track'),cards=[].slice.call(track.children);
+    var prev=root.querySelector('.prev'),next=root.querySelector('.next'),count=root.querySelector('.count'),dotsBox=root.querySelector('.dots');
+    var idx=0,dots=cards.map(function(_,i){var d=document.createElement('button');d.setAttribute('aria-label','Hotel '+(i+1));d.addEventListener('click',function(){go(i);});dotsBox.appendChild(d);return d;});
+    function step(){return cards.length>1?cards[1].offsetLeft-cards[0].offsetLeft:track.clientWidth;}
+    function go(i){i=Math.max(0,Math.min(cards.length-1,i));track.scrollTo({left:cards[i].offsetLeft-cards[0].offsetLeft,behavior:'smooth'});}
+    function sync(){var i=Math.round(track.scrollLeft/step());if(track.scrollLeft+track.clientWidth>=track.scrollWidth-4)i=cards.length-1;idx=Math.max(0,Math.min(cards.length-1,i));
+      count.textContent=(idx+1)+' / '+cards.length;prev.disabled=idx===0;next.disabled=idx===cards.length-1;
+      dots.forEach(function(d,j){d.classList.toggle('on',j===idx);});}
+    prev.addEventListener('click',function(){go(idx-1);});next.addEventListener('click',function(){go(idx+1);});
+    var t;track.addEventListener('scroll',function(){cancelAnimationFrame(t);t=requestAnimationFrame(sync);},{passive:true});
+    window.addEventListener('resize',sync);sync();
+  });
+
+  /* tabs */
+  document.querySelectorAll('[data-tabs]').forEach(function(root){
+    var tabs=[].slice.call(root.querySelectorAll('[role="tab"]')),panels=[].slice.call(root.querySelectorAll('[role="tabpanel"]'));
+    tabs.forEach(function(tab,i){tab.addEventListener('click',function(){
+      tabs.forEach(function(t,j){t.setAttribute('aria-selected',j===i?'true':'false');});
+      panels.forEach(function(p,j){p.hidden=j!==i;});});});
+  });
+
+  /* active nav chip + floating CTA */
+  var links=[].slice.call(document.querySelectorAll('nav.toc a')),cta=document.querySelector('.cta'),closing=document.getElementById('closing'),hero=document.querySelector('.hero');
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  function onScroll(){
+    var y=window.scrollY+120,cur=-1;
+    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i;});
+    links.forEach(function(a,i){var on=i===cur;if(on!==a.classList.contains('on')){a.classList.toggle('on',on);if(on)a.scrollIntoView({block:'nearest',inline:'center'});}});
+    var past=window.scrollY>hero.offsetHeight*.6,atEnd=closing.getBoundingClientRect().top<window.innerHeight*.8;
+    cta.classList.toggle('hide',!past||atEnd);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* info sheets */
+  var INFO={
+    chardonnay:{k:'Grape · Champagne',t:'Chardonnay',s:'The soul of Blanc de Blancs.',x:'On the chalk slopes of the Côte des Blancs, Chardonnay gives champagne its finesse: lemon, white flowers and a fine chalky tension when young, brioche and toasted almonds with age. A champagne made only from Chardonnay is called Blanc de Blancs, white from whites.',f:'Avize, Cramant and Le Mesnil-sur-Oger, the villages we visit on day two, are all Grand Cru for Chardonnay.'},
+    pinot:{k:'Grape · Champagne',t:'Pinot Noir',s:'A red grape that makes white wine.',x:'Pinot Noir has dark skins but clear juice. Pressed gently and quickly, it gives a white base wine with more body, structure and red-fruit depth. It rules the Montagne de Reims, and it brings the power to most great blends.',f:'A champagne made only from black grapes is called Blanc de Noirs, white from blacks.'},
+    meunier:{k:'Grape · Champagne',t:'Meunier',s:'The underdog that growers fell in love with.',x:'Meunier buds late, so it escapes the spring frosts of the Marne valley. For a long time it was seen as a simple blending grape for fruit and roundness. Today a new generation of growers bottles it on its own, with beautiful results.',f:'Its name means "miller": the underside of its leaves is covered in fine white down, as if dusted with flour.'},
+    chalk:{k:'Terroir · Champagne',t:'Chalk',s:'An ancient seabed under the vines.',x:'Millions of years ago a warm sea covered the region, and the shells of tiny sea creatures became a thick layer of chalk. It works like a sponge: it stores winter rain and gives it back to the roots in summer, which keeps the wines fresh and precise.',f:'The Romans dug chalk pits under Reims. Today they are cellars, staying at about 10 to 12°C all year, perfect for aging champagne.'},
+    savagnin:{k:'Grape · Jura',t:'Savagnin',s:'The Jura\'s signature white.',x:'An ancient grape from the Traminer family, Savagnin is the backbone of the Jura. Topped up in barrel, it gives fresh, salty, mineral whites. Left to age under a veil of yeast, it becomes vin jaune, nutty, spicy and unforgettable.',f:'In the Jura, wines made the fresh way are labelled "ouillé", meaning the barrel was kept full.'},
+    poulsard:{k:'Grape · Jura',t:'Poulsard',s:'A red so pale you\'ll think it\'s rosé.',x:'Poulsard, also called Ploussard, is a local grape with very thin skins. It makes light, delicate, almost translucent reds with wild strawberry, rose petals and a little spice. Natural winemakers adore it, and it\'s wonderful slightly chilled.',f:'The tiny village of Pupillin, which we visit on day four, calls itself the world capital of Ploussard.'},
+    trousseau:{k:'Grape · Jura',t:'Trousseau',s:'The Jura\'s deeper, spicier red.',x:'Darker and more structured than Poulsard, Trousseau gives reds with black cherry, pepper and earthy notes. It loves warm gravelly soils and does especially well around the village of Montigny-lès-Arsures, just north of Arbois.',f:'The same grape grows in Portugal, where it\'s called Bastardo and used in Port.'},
+    vinjaune:{k:'Wine · Jura',t:'Vin jaune',s:'Six years under a veil of yeast.',x:'Savagnin is aged in barrel for at least six years and three months without topping up. A thin layer of natural yeast forms on top and protects the wine as it slowly evaporates. The result is golden, dry, with walnut, curry and salty notes, and it can age for a century.',f:'It comes in a special 62cl bottle, the clavelin, said to be what remains of one litre of wine after all those years.'},
+    syrah:{k:'Grape · Northern Rhône',t:'Syrah',s:'Born here, loved everywhere.',x:'Syrah is a true native of the Rhône. On the steep slopes of Côte-Rôtie, Hermitage and Cornas, it gives deep, elegant reds with violets, black olive, smoked meat and black pepper. This is where Australian Shiraz came from.',f:'In Côte-Rôtie, winemakers are allowed to add a little white Viognier to their Syrah, which makes the wine more fragrant.'},
+    viognier:{k:'Grape · Northern Rhône',t:'Viognier',s:'The grape that almost disappeared.',x:'In the 1960s only a few hectares of Viognier were left in the world, almost all in Condrieu. A handful of families kept it alive. Today it\'s planted worldwide, but Condrieu remains its home: apricot, peach, honeysuckle and a silky texture.',f:'Château-Grillet, near Condrieu, is one of the smallest appellations in France, owned by a single estate.'},
+    gamay:{k:'Grape · Beaujolais',t:'Gamay',s:'Once banished, now a natural wine icon.',x:'Gamay is the grape of Beaujolais: juicy, fresh, red berries and violets. In the ten crus, like Morgon and Fleurie, it gives serious wines that can age. In the 1980s, a small group of winemakers here went back to farming without chemicals and making wine with no additives, and the natural wine movement was born.',f:'In 1395, the Duke of Burgundy banned Gamay from his lands, calling it disloyal. Beaujolais happily kept it.'},
+    granite:{k:'Terroir · Rhône & Beaujolais',t:'Granite',s:'Steep slopes, hand work only.',x:'In the Northern Rhône, vines cling to granite slopes so steep that they are held up by old dry stone walls. Everything is done by hand. Granite gives the wines their freshness and mineral edge. Many Beaujolais crus grow on pink granite too.',f:'Côte-Rôtie means "roasted slope": its terraces face south-east and catch the sun all day.'},
+    grenache:{k:'Grape · Southern Rhône',t:'Grenache',s:'The king of the south.',x:'Grenache loves heat, wind and poor stony soils. It is the main grape of Châteauneuf-du-Pape and Gigondas, giving generous wines with ripe raspberry, kirsch, garrigue herbs and spice. Old vines here can be more than a hundred years old.',f:'Château Rayas, one of the most sought-after wines in the world, is made almost entirely from Grenache grown in sand.'},
+    mourvedre:{k:'Grape · Southern Rhône',t:'Mourvèdre',s:'Face to the sun, feet in the water.',x:'Mourvèdre needs a lot of heat to ripen, which is why it thrives in the south. It brings structure, dark fruit, leather and the ability to age for decades. In a blend, it gives Grenache its backbone.',f:'Château de Beaucastel is famous for using more Mourvèdre than most estates in Châteauneuf-du-Pape.'},
+    mistral:{k:'Climate · Provence',t:'Mistral',s:'The wind that keeps the vines healthy.',x:'The Mistral is a cold, dry wind that rushes down the Rhône valley, sometimes above 90 km/h. It dries the vines quickly after rain, so there is very little disease, which makes organic farming much easier. It also clears the sky, giving Provence its famous light.',f:'Painters like Van Gogh and Cézanne loved the clear Provence light the Mistral leaves behind.'},
+    galets:{k:'Terroir · Châteauneuf-du-Pape',t:'Galets',s:'Where the journey ends, on a bed of stones.',x:'Big round stones, polished by the Rhône and ancient Alpine glaciers, cover parts of the Châteauneuf vineyards. They soak up the sun all day and release the heat at night, helping Grenache ripen fully. Walking on them feels like walking on a riverbed.',f:'Châteauneuf-du-Pape wrote some of the first appellation rules in France in the 1920s, which later inspired the whole AOC system.'}
+  };
+  var bg=document.querySelector('.sheet-bg'),sh=document.querySelector('.sheet'),lastBtn=null;
+  function $(id){return document.getElementById(id);}
+  function openInfo(btn){
+    var d=INFO[btn.getAttribute('data-info')];if(!d)return;lastBtn=btn;
+    var cs=getComputedStyle(btn);
+    ['--accent','--deep','--tint'].forEach(function(v){sh.style.setProperty(v,cs.getPropertyValue(v));});
+    $('sh-kind').textContent=d.k;$('sh-title').textContent=d.t;$('sh-sub').textContent=d.s;$('sh-txt').textContent=d.x;$('sh-fact').textContent=d.f;
+    bg.hidden=false;sh.hidden=false;sh.scrollTop=0;
+    requestAnimationFrame(function(){requestAnimationFrame(function(){bg.classList.add('open');sh.classList.add('open');});});
+    document.body.style.overflow='hidden';
+    setTimeout(function(){sh.querySelector('.x').focus({preventScroll:true});},50);
+  }
+  function closeInfo(){
+    bg.classList.remove('open');sh.classList.remove('open');document.body.style.overflow='';
+    setTimeout(function(){bg.hidden=true;sh.hidden=true;},380);
+    if(lastBtn)lastBtn.focus({preventScroll:true});
+  }
+  document.querySelectorAll('.chip[data-info]').forEach(function(b){b.addEventListener('click',function(){openInfo(b);});});
+  bg.addEventListener('click',closeInfo);sh.querySelector('.x').addEventListener('click',closeInfo);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sh.hidden)closeInfo();});
+  var y0=null;sh.addEventListener('touchstart',function(e){y0=sh.scrollTop<=0?e.touches[0].clientY:null;},{passive:true});
+  sh.addEventListener('touchend',function(e){if(y0!==null&&e.changedTouches[0].clientY-y0>70)closeInfo();y0=null;},{passive:true});
+})();
+</script>
+</body></html>
