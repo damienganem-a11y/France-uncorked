@@ -184,7 +184,8 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
 .why .wrap{display:grid;gap:30px}
 .why h2{font-size:clamp(38px,9.5vw,62px);line-height:1}
 .why h2 em{color:var(--gold)}
-.perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.perks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:480px){.perks{grid-template-columns:1fr}}
 .perk{background:var(--white);border-radius:24px;padding:22px;display:grid;gap:8px;align-content:start}
 .perk .o{width:36px;height:36px;border-radius:50%;border:1px solid var(--gold);position:relative;margin-bottom:6px}
 .perk .o::after{content:"";position:absolute;width:10px;height:10px;border-radius:50%;border:1px solid var(--gold);right:-9px;top:-7px}
@@ -291,7 +292,7 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
       </div>
       <div class="track">
         <article class="hcard">
-          <div class="vis"><span class="badge pick">Night one</span><h4>Les Avisés</h4></div>
+          <div class="vis"><span class="badge pick">Night one · My recommendation</span><h4>Les Avisés</h4></div>
           <div class="body">
             <span class="where">Avize, in the Côte des Blancs</span>
             <p>Ten rooms in the Selosse family home, next to the winery. The domaine is closed to visitors, so this is the way in: a single menu at the long table, the full range of Selosse champagnes, and, on some evenings, an aperitif hosted by the domaine for hotel guests.</p>
@@ -299,7 +300,7 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
           </div>
         </article>
         <article class="hcard">
-          <div class="vis"><span class="badge pick">Night two</span><h4>L'Assiette Champenoise</h4></div>
+          <div class="vis"><span class="badge pick">Night two · My recommendation</span><h4>L'Assiette Champenoise</h4></div>
           <div class="body">
             <span class="where">Reims, three Michelin stars, Relais &amp; Châteaux</span>
             <p>Arnaud Lallement's family house, with a privileged relationship with Krug. Stay here and the private Krug visit comes with it, followed by a dinner paired with Krug Grande Cuvée, Vintage and Rosé. Then just walk upstairs to your suite.</p>
@@ -376,7 +377,7 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
       </div>
       <div class="track">
         <article class="hcard">
-          <div class="vis"><span class="badge pick">Our choice</span><h4>Château de Germigney</h4></div>
+          <div class="vis"><span class="badge pick">My top recommendation</span><h4>Château de Germigney</h4></div>
           <div class="body">
             <span class="where">A river valley minutes from Arbois</span>
             <p>A Relais &amp; Châteaux hunting lodge in a private park, with a Caudalie vinotherapy spa (wine-based treatments, of course), a natural swimming pond and a gastronomic restaurant cooking almost only local produce.</p>
@@ -467,7 +468,7 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
       </div>
       <div class="track">
         <article class="hcard">
-          <div class="vis"><span class="badge pick">Our choice</span><h4>InterContinental Hôtel-Dieu</h4></div>
+          <div class="vis"><span class="badge pick">My top recommendation</span><h4>InterContinental Hôtel-Dieu</h4></div>
           <div class="body">
             <span class="where">On the banks of the Rhône, in the heart of Lyon</span>
             <p>A UNESCO-listed 18th-century landmark reborn as Lyon's grandest hotel, with cocktails under its famous dome and the whole city at your doorstep.</p>
@@ -560,7 +561,7 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
       </div>
       <div class="track">
         <article class="hcard">
-          <div class="vis"><span class="badge pick">Our choice</span><h4>Crillon le Brave</h4></div>
+          <div class="vis"><span class="badge pick">My top recommendation</span><h4>Crillon le Brave</h4></div>
           <div class="body">
             <span class="where">A hilltop village facing Mont Ventoux</span>
             <p>Not a hotel in a village, but a village that became a hotel: twelve old stone houses, a spa in the former stables, two heated pools and terraces made for sunset. Freshly renovated and reopened in spring 2026.</p>
