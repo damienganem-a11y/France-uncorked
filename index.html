@@ -2,6 +2,18 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>France, Uncorked</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Ten days of spring in France, from Champagne to Châteauneuf-du-Pape. Krug, Selosse, three-star tables and cellar doors that usually stay closed.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="France, Uncorked">
+<meta property="og:description" content="Ten private days from Champagne to Châteauneuf-du-Pape, hosted by Damien.">
+<meta property="og:url" content="https://damienganem-a11y.github.io/france-uncorked/">
+<meta property="og:image" content="https://damienganem-a11y.github.io/france-uncorked/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://damienganem-a11y.github.io/france-uncorked/og.png">
+<meta name="theme-color" content="#FCFAF5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FCFAF5'/%3E%3Ccircle cx='28' cy='38' r='14' fill='none' stroke='%23B48A45' stroke-width='3'/%3E%3Ccircle cx='46' cy='18' r='6' fill='none' stroke='%23B48A45' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Pinyon+Script&family=Manrope:wght@300;400;500;600&display=swap">
@@ -13,7 +25,7 @@
   --gold:#B48A45;
   --gold-deep:#8C6A2F;
   --ink:#352E28;
-  --ink-soft:#786E63;
+  --ink-soft:#6E645A;
   --line:#E9DFCB;
   --white:#FFFFFF;
   --tint:#F6EEDC;
@@ -33,7 +45,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 h1,h2,h3,h4{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance}
 p{margin:0}
 .wrap{max-width:760px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
-.kicker{font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--accent)}
+.kicker{font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--deep)}
 .script{font-family:var(--script);font-weight:400}
 
 /* HERO */
@@ -43,20 +55,37 @@ p{margin:0}
   var(--pearl)}
 .hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .hero .wrap{position:relative;padding-block:64px 52px;display:grid;gap:22px}
+.hero .copy{display:grid;gap:22px;min-width:0}
+.carte{display:none}
+@media (min-width:980px){
+  .hero .wrap{max-width:1120px;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:64px;align-items:center;padding-block:88px 72px}
+  .carte{display:grid;gap:0;background:color-mix(in srgb, var(--white) 82%, transparent);border:1px solid var(--line);border-radius:4px;padding:34px 34px 28px;position:relative;box-shadow:0 30px 60px -40px rgba(140,106,47,.45)}
+  .carte::before{content:"";position:absolute;inset:8px;border:1px solid var(--line);border-radius:2px;pointer-events:none}
+  .carte .kicker{text-align:center;margin-bottom:6px}
+  .carte h2{text-align:center;font-style:italic;font-size:30px;line-height:1.1;margin-bottom:18px}
+  .carte ol{list-style:none;margin:0;padding:0}
+  .carte li{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:10px;padding:14px 0;border-top:1px solid var(--line)}
+  .carte li a{font-family:var(--display);font-size:26px;line-height:1.1}
+  .carte li a:hover{color:var(--gold-deep)}
+  .carte li em{grid-column:1;font-family:var(--display);font-style:italic;font-size:16px;color:var(--ink-soft)}
+  .carte li span{grid-column:2;grid-row:1 / span 2;align-self:center;font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);text-align:right}
+  .carte .foot{text-align:center;font-family:var(--script);font-size:24px;color:var(--gold-deep);padding-top:14px;border-top:1px solid var(--line)}
+}
 .hero h1{font-size:clamp(68px,19vw,150px);line-height:.88;letter-spacing:-.02em}
 .hero h1 .en{font-family:var(--script);font-size:.5em;color:var(--gold);display:inline-block;margin:0 .08em 0 .02em;transform:translateY(-.08em)}
 .hero h1 i{font-style:italic}
-.hero .promise{font-family:var(--display);font-style:italic;font-size:clamp(24px,6vw,34px);line-height:1.2;max-width:22ch}
+.hero .promise{font-family:var(--display);font-style:italic;font-size:clamp(24px,6vw,34px);line-height:1.2;max-width:24ch}
 .hero .lede{max-width:52ch;color:var(--ink-soft);font-size:16.5px}
 .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding-top:22px;border-top:1px solid var(--line)}
-.facts div{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);line-height:1.35}
+.facts div{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);line-height:1.35}
 .facts b{display:block;font-family:var(--display);font-weight:400;font-size:40px;letter-spacing:0;color:var(--gold);line-height:1;margin-bottom:4px;text-transform:none}
 @media (max-width:420px){.facts{grid-template-columns:repeat(2,1fr);row-gap:18px}}
 
 /* NAV */
 nav.toc{position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;background:color-mix(in srgb, var(--pearl) 90%, transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:30;background:var(--pearl)}
-nav.toc .wrap{display:flex;gap:8px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+nav.toc .wrap{display:flex;gap:8px;overflow-x:auto;padding-block:10px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 36px),transparent)}
+nav.toc .wrap::after{content:"";flex:0 0 24px}
 nav.toc .wrap::-webkit-scrollbar{display:none}
 nav.toc a{flex:0 0 auto;font-size:12px;font-weight:500;letter-spacing:.06em;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--white);color:var(--ink-soft);white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
 nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
@@ -101,10 +130,9 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
 .sheet.open{transform:translateY(0)}
 .sheet .grab{width:42px;height:4px;border-radius:999px;background:var(--line);margin:0 auto 18px}
 .sheet .in{max-width:560px;margin:0 auto;display:grid;gap:12px;position:relative}
-.sheet .bub{position:absolute;right:0;top:-4px;width:70px;height:70px;border-radius:50%;border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);pointer-events:none}
-.sheet .bub::after{content:"";position:absolute;width:20px;height:20px;border-radius:50%;border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);left:-18px;bottom:-6px}
-.sheet .kicker{color:var(--accent)}
-.sheet h3{font-size:44px;line-height:1;padding-right:70px}
+.sheet .bub{display:none}
+.sheet .kicker{color:var(--deep)}
+.sheet h3{font-size:44px;line-height:1}
 .sheet .sub{font-family:var(--display);font-style:italic;font-size:21px;line-height:1.3;color:var(--deep)}
 .sheet p.txt{font-size:15.5px;line-height:1.7}
 .sheet .fact{display:flex;gap:12px;align-items:baseline;padding:14px 16px;border-radius:18px;background:var(--tint)}
@@ -117,7 +145,6 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
   .sheet .grab{display:none}
 }
 .story{font-size:17px;line-height:1.7;max-width:56ch}
-.story::first-letter{font-family:var(--display);font-size:3.6em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--accent)}
 
 /* days */
 .days{display:grid;gap:14px}
@@ -146,11 +173,15 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
 .hcard{flex:0 0 calc(100% - 34px);max-width:600px;scroll-snap-align:start;background:var(--white);border-radius:28px;overflow:hidden;display:grid;box-shadow:0 24px 46px -34px color-mix(in srgb, var(--deep) 80%, transparent)}
 .hcard .vis{position:relative;min-height:170px;padding:22px;display:grid;align-content:space-between;gap:20px;overflow:hidden;background:
   radial-gradient(130% 120% at 100% 0%, color-mix(in srgb, var(--accent) 22%, var(--white)) 0%, var(--tint) 55%, color-mix(in srgb, var(--tint) 70%, var(--white)) 100%)}
-.hcard .vis::before,.hcard .vis::after{content:"";position:absolute;border-radius:50%;border:1px solid color-mix(in srgb, var(--accent) 40%, transparent)}
-.hcard .vis::before{width:150px;height:150px;right:-40px;top:-50px}
-.hcard .vis::after{width:46px;height:46px;right:88px;top:70px;background:color-mix(in srgb, var(--white) 50%, transparent)}
+.hcard .vis::after{content:"";position:absolute;left:22px;right:22px;bottom:0;height:1px;background:color-mix(in srgb, var(--accent) 30%, transparent)}
 .hcard .badge{justify-self:start;font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:var(--white);color:var(--deep);position:relative;z-index:1}
 .hcard .badge.pick{background:var(--deep);color:var(--white)}
+.hcard .badges{display:flex;flex-wrap:wrap;gap:6px;position:relative;z-index:1}
+.hcard .badge{white-space:nowrap;letter-spacing:.12em;padding:6px 10px}
+.hcard .badge.rec{padding:5px 9px!important}
+.hcard .badges .badge{font-size:9.5px;letter-spacing:.1em;padding:6px 9px}
+.hcard .badges{flex-wrap:nowrap}
+.hcard .badge.rec{background:transparent;border:1px solid color-mix(in srgb, var(--deep) 45%, transparent);color:var(--deep);padding:5px 11px}
 .hcard .vis h4{font-size:clamp(30px,8vw,40px);line-height:1;position:relative;z-index:1;max-width:14ch}
 .hcard .body{padding:20px 22px 22px;display:grid;gap:10px;align-content:start}
 .hcard .where{font-family:var(--display);font-style:italic;font-size:19px;line-height:1.25;color:var(--deep)}
@@ -164,12 +195,12 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
 .tabs{display:grid;gap:16px}
 .tablist{display:flex;gap:6px;padding:5px;border-radius:999px;background:color-mix(in srgb, var(--white) 70%, transparent);border:1px solid color-mix(in srgb, var(--accent) 22%, transparent);overflow-x:auto;scrollbar-width:none}
 .tablist::-webkit-scrollbar{display:none}
-.tablist button{flex:1 0 auto;padding:10px 14px;border-radius:999px;font-size:13px;font-weight:500;color:var(--ink-soft);white-space:nowrap;transition:background .2s,color .2s}
+.tablist button{flex:1 1 0;min-width:0;padding:10px 8px;border-radius:999px;font-size:13px;font-weight:500;color:var(--ink-soft);white-space:nowrap;transition:background .2s,color .2s}
 .tablist button[aria-selected="true"]{background:var(--deep);color:var(--white)}
 .panel ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .panel li a{display:grid;grid-template-columns:1fr auto;gap:2px 14px;align-items:center;background:var(--white);border-radius:18px;padding:16px 18px;transition:transform .2s}
 .panel li a:active{transform:scale(.99)}
-.panel .tg{grid-column:1;font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.panel .tg{grid-column:1;font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--deep)}
 .panel .nm{grid-column:1;font-family:var(--display);font-size:22px;line-height:1.15}
 .panel .ds{grid-column:1;font-size:14px;color:var(--ink-soft);line-height:1.5}
 .panel .arr{grid-column:2;grid-row:1 / span 3;width:34px;height:34px;border-radius:50%;background:var(--tint);display:grid;place-items:center}
@@ -187,19 +218,37 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
 .perks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 @media (max-width:480px){.perks{grid-template-columns:1fr}}
 .perk{background:var(--white);border-radius:24px;padding:22px;display:grid;gap:8px;align-content:start}
-.perk .o{width:36px;height:36px;border-radius:50%;border:1px solid var(--gold);position:relative;margin-bottom:6px}
-.perk .o::after{content:"";position:absolute;width:10px;height:10px;border-radius:50%;border:1px solid var(--gold);right:-9px;top:-7px}
+.perk .o{font-family:var(--display);font-style:italic;font-size:22px;line-height:1;color:var(--gold-deep);padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:4px;justify-self:start;min-width:36px}
 .perk h3{font-size:25px;line-height:1.1}
 .perk p{font-size:15px;color:var(--ink-soft)}
 
-.closing{padding-block:36px 120px;text-align:center;scroll-margin-top:54px}
+.closing{padding-block:36px 72px;text-align:center;scroll-margin-top:54px}
+.plan{width:100%;max-width:520px;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;text-align:left;background:var(--white);border-radius:24px;padding:20px;box-shadow:0 24px 46px -34px rgba(140,106,47,.6);scroll-margin-top:70px}
+.plan .wide{grid-column:1 / -1}
+.plan .field{display:grid;gap:6px;min-width:0}
+.plan label{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep)}
+.plan select,.plan input{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--pearl);border:1px solid var(--line);border-radius:14px;padding:11px 12px;min-width:0}
+.plan select:focus,.plan input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.plan .step{display:flex;align-items:center;justify-content:space-between;background:var(--pearl);border:1px solid var(--line);border-radius:14px;padding:4px}
+.plan .step button{width:38px;height:38px;border-radius:10px;font-size:20px;color:var(--gold-deep)}
+.plan .step button:active{background:var(--cream)}
+.plan output{font-family:var(--display);font-size:24px}
+.plan .sends{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.plan .send{display:grid;place-items:center;text-align:center;padding:13px 10px;border-radius:999px;background:var(--ink);color:var(--pearl);font-size:12.5px;font-weight:600;letter-spacing:.08em}
+.plan .send.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.plan .note{font-size:13px;color:var(--ink-soft);text-align:center;max-width:none}
+@media (max-width:360px){.plan,.plan .sends{grid-template-columns:1fr}}
+footer.foot{border-top:1px solid var(--line);padding-block:28px calc(96px + env(safe-area-inset-bottom, 0px))}
+footer.foot .wrap{display:grid;gap:4px;text-align:center;font-size:13px;color:var(--ink-soft)}
+footer.foot .fh{font-family:var(--display);font-style:italic;font-size:22px;color:var(--ink)}
+footer.foot .fine{font-size:12px;opacity:.85}
 .closing .wrap{display:grid;gap:14px;justify-items:center}
 .closing h2{font-size:clamp(44px,12vw,84px);line-height:.95;font-style:italic}
 .closing p{max-width:40ch;color:var(--ink-soft)}
 .closing .sig{font-family:var(--script);font-size:44px;line-height:1;color:var(--gold-deep);margin-top:10px}
 
 /* floating CTA, phone */
-.cta{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom, 0px));z-index:25;display:flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;background:var(--ink);color:var(--pearl);font-size:13px;font-weight:600;letter-spacing:.08em;box-shadow:0 14px 30px -12px rgba(53,46,40,.55);transition:opacity .3s,transform .3s;white-space:nowrap}
+.cta{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom, 0px));z-index:25;display:flex;align-items:center;gap:10px;padding:11px 18px;border-radius:999px;background:var(--ink);color:var(--pearl);font-size:12px;font-weight:600;letter-spacing:.08em;box-shadow:0 14px 30px -12px rgba(53,46,40,.55);transition:opacity .3s,transform .3s;white-space:nowrap}
 .cta .b{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:8px -6px 0 -2px var(--gold)}
 .cta.hide{opacity:0;pointer-events:none;transform:translate(-50%,20px)}
 
@@ -217,27 +266,40 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
 <header class="hero">
   <canvas id="fizzc" aria-hidden="true"></canvas>
   <div class="wrap">
-    <div class="kicker">A private journey through French wine country</div>
+    <div class="copy">
+    <div class="kicker">A private wine journey · Spring</div>
     <h1>France,<br><i>Uncorked</i></h1>
-    <p class="promise">From the first glass of champagne to the last sunset over Châteauneuf-du-Pape.</p>
+    <p class="promise">From the first glass of champagne to the last sunset over <span style="white-space:nowrap">Châteauneuf&#8209;du&#8209;Pape</span>.</p>
     <p class="lede">Ten days of spring in France, made for the two of you, or a few close friends if you want to share it. Grower champagne in chalk cellars, vin jaune in a hidden corner of the Jura, Syrah on the terraces of the Rhône, and long lunches under the Provence sun. The best tables in France, cellar doors that usually stay closed, and nothing for you to worry about.</p>
     <div class="facts">
       <div><b>10</b>days in spring</div>
       <div><b>4</b>wine regions</div>
       <div><b>3</b>starred feasts</div>
-      <div><b>1</b>small, private group</div>
+      <div><b>2</b>cult houses</div>
     </div>
+    </div>
+    <aside class="carte" aria-label="The four chapters">
+      <div class="kicker">The route</div>
+      <h2>Ten days, four chapters</h2>
+      <ol>
+        <li><a href="#champagne">Champagne</a><em>Krug, Selosse, three stars</em><span>Days 1&#8209;3</span></li>
+        <li><a href="#jura">Jura</a><em>Vin jaune and natural wine</em><span>Days 3&#8209;5</span></li>
+        <li><a href="#rhone">Lyon &amp; the Rhône</a><em>Pic, Bocuse, Côte-Rôtie</em><span>Days 5&#8209;8</span></li>
+        <li><a href="#provence">Provence</a><em>Châteauneuf and Van Gogh</em><span>Days 8&#8209;10</span></li>
+      </ol>
+      <div class="foot">À votre santé</div>
+    </aside>
   </div>
 </header>
 
 <nav class="toc" aria-label="Chapters">
   <div class="wrap">
-    <a href="#journey">The journey</a>
+    <a href="#journey">Route</a>
     <a href="#champagne">Champagne</a>
     <a href="#jura">Jura</a>
-    <a href="#rhone">Lyon &amp; Rhône</a>
+    <a href="#rhone">Rhône</a>
     <a href="#provence">Provence</a>
-    <a href="#why">Why with me</a>
+    <a href="#why">Why me</a><a href="#plan">Your dates</a>
   </div>
 </nav>
 
@@ -292,7 +354,7 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
       </div>
       <div class="track">
         <article class="hcard">
-          <div class="vis"><span class="badge pick">Night one · My recommendation</span><h4>Les Avisés</h4></div>
+          <div class="vis"><span class="badges"><span class="badge pick">Night one</span><span class="badge rec">My recommendation</span></span><h4>Les Avisés</h4></div>
           <div class="body">
             <span class="where">Avize, in the Côte des Blancs</span>
             <p>Ten rooms in the Selosse family home, next to the winery. The domaine is closed to visitors, so this is the way in: a single menu at the long table, the full range of Selosse champagnes, and, on some evenings, an aperitif hosted by the domaine for hotel guests.</p>
@@ -300,7 +362,7 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
           </div>
         </article>
         <article class="hcard">
-          <div class="vis"><span class="badge pick">Night two · My recommendation</span><h4>L'Assiette Champenoise</h4></div>
+          <div class="vis"><span class="badges"><span class="badge pick">Night two</span><span class="badge rec">My recommendation</span></span><h4>L'Assiette Champenoise</h4></div>
           <div class="body">
             <span class="where">Reims, three Michelin stars, Relais &amp; Châteaux</span>
             <p>Arnaud Lallement's family house, with a privileged relationship with Krug. Stay here and the private Krug visit comes with it, followed by a dinner paired with Krug Grande Cuvée, Vintage and Rosé. Then just walk upstairs to your suite.</p>
@@ -320,7 +382,7 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
     </div>
 
     <div class="tabs" data-tabs>
-      <div class="tablist" role="tablist"><button role="tab" aria-selected="true">At the table</button><button role="tab" aria-selected="false">In the cellars</button><button role="tab" aria-selected="false">Beyond the glass</button></div>
+      <div class="tablist" role="tablist"><button role="tab" aria-selected="true">Tables</button><button role="tab" aria-selected="false">Cellars</button><button role="tab" aria-selected="false">Beyond</button></div>
       <div class="panel" role="tabpanel"><ul>
         <li><a href="https://www.assiettechampenoise.com" target="_blank" rel="noopener"><span class="tg">Three stars</span><span class="nm">L'Assiette Champenoise</span><span class="ds">The signature blue lobster, paired with Krug.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
         <li><a href="https://www.selosse-lesavises.com" target="_blank" rel="noopener"><span class="tg">Night one</span><span class="nm">Les Avisés</span><span class="ds">One menu, one long table, Selosse all evening.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
@@ -341,7 +403,6 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
   </div>
 </section>
 
-<div class="fizz" aria-hidden="true" style="--accent:#B08540"><i style="width:6px;height:6px"></i><i style="width:10px;height:10px"></i><i style="width:4px;height:4px"></i><i style="width:14px;height:14px"></i><i style="width:7px;height:7px"></i></div>
 
 <!-- JURA -->
 <section class="chapter c-jura" id="jura">
@@ -353,7 +414,7 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
       <div class="notes"><button class="chip" data-info="savagnin">Savagnin<span class="i">i</span></button><button class="chip" data-info="poulsard">Poulsard<span class="i">i</span></button><button class="chip" data-info="trousseau">Trousseau<span class="i">i</span></button><button class="chip" data-info="vinjaune">Vin jaune<span class="i">i</span></button></div>
     </div>
 
-    <p class="story">Green hills, forests, cliff-top villages, and winemakers who still do everything by hand. This is where vin jaune ages for six years under a veil of yeast, where comté sleeps in mountain forts, and where many of the natural wines you love in Napa were born. We stay in an 18th-century château by the river and let the region surprise you.</p>
+    <p class="story">Green hills, forests, cliff-top villages, and winemakers who still do everything by hand. This is where vin jaune ages for six years under a veil of yeast, where comté sleeps in mountain forts, and the region natural wine lovers in Napa swear by. We stay in an 18th-century château by the river and let the region surprise you.</p>
 
     <div class="days">
       <article class="day">
@@ -377,7 +438,7 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
       </div>
       <div class="track">
         <article class="hcard">
-          <div class="vis"><span class="badge pick">My top recommendation</span><h4>Château de Germigney</h4></div>
+          <div class="vis"><span class="badge pick">Top recommendation</span><h4>Château de Germigney</h4></div>
           <div class="body">
             <span class="where">A river valley minutes from Arbois</span>
             <p>A Relais &amp; Châteaux hunting lodge in a private park, with a Caudalie vinotherapy spa (wine-based treatments, of course), a natural swimming pond and a gastronomic restaurant cooking almost only local produce.</p>
@@ -405,7 +466,7 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
     </div>
 
     <div class="tabs" data-tabs>
-      <div class="tablist" role="tablist"><button role="tab" aria-selected="true">At the table</button><button role="tab" aria-selected="false">In the cellars</button><button role="tab" aria-selected="false">Beyond the glass</button></div>
+      <div class="tablist" role="tablist"><button role="tab" aria-selected="true">Tables</button><button role="tab" aria-selected="false">Cellars</button><button role="tab" aria-selected="false">Beyond</button></div>
       <div class="panel" role="tabpanel"><ul>
         <li><a href="https://www.chateaudegermigney.com" target="_blank" rel="noopener"><span class="tg">Gastronomic</span><span class="nm">La Table du Château</span><span class="ds">Seasonal Jura cooking at Germigney.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
         <li><a href="https://www.google.com/maps/search/?api=1&query=Le+Bistronome+Arbois" target="_blank" rel="noopener"><span class="tg">Arbois</span><span class="nm">Le Bistronome</span><span class="ds">The locals' favourite in town.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
@@ -426,7 +487,6 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
   </div>
 </section>
 
-<div class="fizz" aria-hidden="true" style="--accent:#77874E"><i style="width:5px;height:5px"></i><i style="width:12px;height:12px"></i><i style="width:7px;height:7px"></i><i style="width:4px;height:4px"></i><i style="width:9px;height:9px"></i></div>
 
 <!-- RHONE -->
 <section class="chapter c-rhone" id="rhone">
@@ -468,7 +528,7 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
       </div>
       <div class="track">
         <article class="hcard">
-          <div class="vis"><span class="badge pick">My top recommendation</span><h4>InterContinental Hôtel-Dieu</h4></div>
+          <div class="vis"><span class="badge pick">Top recommendation</span><h4>InterContinental Hôtel-Dieu</h4></div>
           <div class="body">
             <span class="where">On the banks of the Rhône, in the heart of Lyon</span>
             <p>A UNESCO-listed 18th-century landmark reborn as Lyon's grandest hotel, with cocktails under its famous dome and the whole city at your doorstep.</p>
@@ -496,7 +556,7 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
     </div>
 
     <div class="tabs" data-tabs>
-      <div class="tablist" role="tablist"><button role="tab" aria-selected="true">At the table</button><button role="tab" aria-selected="false">In the cellars</button><button role="tab" aria-selected="false">Beyond the glass</button></div>
+      <div class="tablist" role="tablist"><button role="tab" aria-selected="true">Tables</button><button role="tab" aria-selected="false">Cellars</button><button role="tab" aria-selected="false">Beyond</button></div>
       <div class="panel" role="tabpanel"><ul>
         <li><a href="https://www.anne-sophie-pic.com" target="_blank" rel="noopener"><span class="tg">Three stars</span><span class="nm">Maison Pic</span><span class="ds">The world's most decorated female chef.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
         <li><a href="https://www.bocuse.fr" target="_blank" rel="noopener"><span class="tg">Two stars</span><span class="nm">Paul Bocuse</span><span class="ds">The temple of French cuisine.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
@@ -520,7 +580,6 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
   </div>
 </section>
 
-<div class="fizz" aria-hidden="true" style="--accent:#A44E5D"><i style="width:8px;height:8px"></i><i style="width:4px;height:4px"></i><i style="width:13px;height:13px"></i><i style="width:6px;height:6px"></i><i style="width:10px;height:10px"></i></div>
 
 <!-- PROVENCE -->
 <section class="chapter c-provence" id="provence">
@@ -561,7 +620,7 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
       </div>
       <div class="track">
         <article class="hcard">
-          <div class="vis"><span class="badge pick">My top recommendation</span><h4>Crillon le Brave</h4></div>
+          <div class="vis"><span class="badge pick">Top recommendation</span><h4>Crillon le Brave</h4></div>
           <div class="body">
             <span class="where">A hilltop village facing Mont Ventoux</span>
             <p>Not a hotel in a village, but a village that became a hotel: twelve old stone houses, a spa in the former stables, two heated pools and terraces made for sunset. Freshly renovated and reopened in spring 2026.</p>
@@ -581,7 +640,7 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
     </div>
 
     <div class="tabs" data-tabs>
-      <div class="tablist" role="tablist"><button role="tab" aria-selected="true">At the table</button><button role="tab" aria-selected="false">In the cellars</button><button role="tab" aria-selected="false">Beyond the glass</button></div>
+      <div class="tablist" role="tablist"><button role="tab" aria-selected="true">Tables</button><button role="tab" aria-selected="false">Cellars</button><button role="tab" aria-selected="false">Beyond</button></div>
       <div class="panel" role="tabpanel"><ul>
         <li><a href="https://www.la-mirande.fr" target="_blank" rel="noopener"><span class="tg">One star</span><span class="nm">La Mirande</span><span class="ds">Gastronomy in a secret garden.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
         <li><a href="https://www.crillonlebrave.com" target="_blank" rel="noopener"><span class="tg">The hotel</span><span class="nm">La Table du Ventoux</span><span class="ds">Provence on a plate, the mountain on the horizon.</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></span></a></li>
@@ -609,10 +668,10 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
     <div class="kicker">Why travel with me</div>
     <h2>Every door opened, <em>every detail handled.</em></h2>
     <div class="perks">
-      <div class="perk"><span class="o"></span><h3>Small on purpose</h3><p>Made for the two of you, or a few close friends. Keeping it intimate is what opens the doors and protects the magic.</p></div>
-      <div class="perk"><span class="o"></span><h3>Cellars that stay closed</h3><p>Winemakers who don't take visitors, opened through friends and local experts in every region.</p></div>
-      <div class="perk"><span class="o"></span><h3>The best tables</h3><p>Three stars in Champagne and Valence, Bocuse in Lyon, and the bistros the locals keep for themselves.</p></div>
-      <div class="perk"><span class="o"></span><h3>One host, door to door</h3><p>I meet you when you land and I'm by your side until your bags are checked in for the flight home. The only thing you have to do is taste.</p></div>
+      <div class="perk"><span class="o">I</span><h3>Small on purpose</h3><p>Made for the two of you, or a few close friends. Keeping it intimate is what opens the doors and protects the magic.</p></div>
+      <div class="perk"><span class="o">II</span><h3>Cellars that stay closed</h3><p>Winemakers who don't take visitors, opened through friends and local experts in every region.</p></div>
+      <div class="perk"><span class="o">III</span><h3>The best tables</h3><p>Three stars in Champagne and Valence, Bocuse in Lyon, and the bistros the locals keep for themselves.</p></div>
+      <div class="perk"><span class="o">IV</span><h3>One host, door to door</h3><p>I meet you when you land and I'm by your side until your bags are checked in for the flight home. The only thing you have to do is taste.</p></div>
     </div>
   </div>
 </section>
@@ -621,14 +680,35 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
   <div class="wrap">
     <div class="fizz" aria-hidden="true" style="--accent:#B48A45"><i style="width:6px;height:6px"></i><i style="width:11px;height:11px"></i><i style="width:4px;height:4px"></i><i style="width:16px;height:16px"></i><i style="width:8px;height:8px"></i></div>
     <h2>Shall we open the first bottle?</h2>
-    <p>Spring in France is short and the best cellars book early. Tell me your dates and who's coming, and I'll start opening doors.</p>
+    <p>Spring in France is short and the best cellars book early. Tell me when and who's coming, and I'll start opening doors.</p>
+    <form class="plan" id="plan" novalidate>
+      <div class="field"><label for="p-when">When</label>
+        <select id="p-when"><option>March 2027</option><option selected>April 2027</option><option>May 2027</option><option>June 2027</option><option>Flexible</option></select></div>
+      <div class="field"><label for="p-who">Travellers</label>
+        <div class="step"><button type="button" data-d="-1" aria-label="One less">&minus;</button><output id="p-who">2</output><button type="button" data-d="1" aria-label="One more">+</button></div></div>
+      <div class="field wide"><label for="p-note">A wish, a craving, a must</label>
+        <input id="p-note" type="text" placeholder="e.g. more Krug, a spa day" autocomplete="off"></div>
+      <div class="sends wide">
+        <a class="send" id="p-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="send ghost" id="p-sms" href="#">Text message</a>
+      </div>
+      <p class="note wide">Opens your messages with everything filled in. Just choose Damien and press send.</p>
+    </form>
     <span class="sig">Damien</span>
   </div>
 </section>
 
 </main>
 
-<a class="cta" href="#closing"><span class="b"></span>Let's plan your spring</a>
+<footer class="foot">
+  <div class="wrap">
+    <span class="fh">France, Uncorked</span>
+    <span>A private journey designed and hosted by Damien · Spring 2027</span>
+    <span class="fine">Hotels, tables and visits are confirmed at booking.</span>
+  </div>
+</footer>
+
+<a class="cta" href="#plan"><span class="b"></span>Plan your spring</a>
 
 <div class="sheet-bg" hidden></div>
 <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-title" hidden>
@@ -686,15 +766,23 @@ nav.toc a.on{background:var(--ink);border-color:var(--ink);color:var(--pearl)}
       panels.forEach(function(p,j){p.hidden=j!==i;});});});
   });
 
+  /* plan form -> message */
+  var who=document.getElementById('p-who'),when=document.getElementById('p-when'),note=document.getElementById('p-note'),wa=document.getElementById('p-wa'),sms=document.getElementById('p-sms');
+  function msg(){var n=+who.value||+who.textContent||2;var t='Hi Damien! We would love France, Uncorked. When: '+when.value+'. Travellers: '+n+'.';if(note.value.trim())t+=' Our wish: '+note.value.trim()+'.';return t;}
+  function upd(){var t=encodeURIComponent(msg());wa.href='https://wa.me/?text='+t;sms.href='sms:?&body='+t;}
+  document.querySelectorAll('.plan .step button').forEach(function(b){b.addEventListener('click',function(){var n=Math.max(1,Math.min(12,(+who.textContent||2)+(+b.getAttribute('data-d'))));who.textContent=n;who.value=n;upd();});});
+  when.addEventListener('change',upd);note.addEventListener('input',upd);document.getElementById('plan').addEventListener('submit',function(e){e.preventDefault();});upd();
+
   /* active nav chip + floating CTA */
-  var links=[].slice.call(document.querySelectorAll('nav.toc a')),cta=document.querySelector('.cta'),closing=document.getElementById('closing'),hero=document.querySelector('.hero');
+  var lastY=window.scrollY,ctaUp=true,links=[].slice.call(document.querySelectorAll('nav.toc a')),cta=document.querySelector('.cta'),closing=document.getElementById('closing'),hero=document.querySelector('.hero');
   var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
   function onScroll(){
     var y=window.scrollY+120,cur=-1;
     secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i;});
     links.forEach(function(a,i){var on=i===cur;if(on!==a.classList.contains('on')){a.classList.toggle('on',on);if(on)a.scrollIntoView({block:'nearest',inline:'center'});}});
-    var past=window.scrollY>hero.offsetHeight*.6,atEnd=closing.getBoundingClientRect().top<window.innerHeight*.8;
-    cta.classList.toggle('hide',!past||atEnd);
+    var yy=window.scrollY,down=yy>lastY+4,up=yy<lastY-4;if(down)ctaUp=false;if(up)ctaUp=true;lastY=yy;
+    var past=yy>hero.offsetHeight*.6,atEnd=closing.getBoundingClientRect().top<window.innerHeight*.9;
+    cta.classList.toggle('hide',!past||atEnd||!ctaUp);
   }
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 
